@@ -5,7 +5,7 @@ class Traveler {
         this.isHealthy = true;
     }
     hunt(){
-        food+=2;
+        this.food+=2;
     }
     eat(meal){
         if (this.food >=meal){
@@ -21,11 +21,12 @@ class Wagon {
         this.capacity = capacity;
         this.passengers = passengers;
     }
-    getAvailableSeatCount(){
-
-    }
+    getAvailableSeatCount(seating){
+        this.capacity -= this.passengers;
+        return seating
+    }   
     join(){
-
+        
     }
     shouldQuarantine(){
 
