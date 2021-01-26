@@ -24,15 +24,17 @@ class Traveler {
 
 class Wagon {
     constructor(capacity){
-        this.capacity = capacity;
+        this.seats = capacity;
         this.passengers = [];
     }
     getAvailableSeatCount(){
-        return this.capacity -= this.passengers.length;
+        let totalSeats = 0;
+        totalSeats = this.seats - this.passengers.length;
+        return totalSeats
     }   
     join(traveler){
-        if(this.passengers.length < this.capacity){
-            this.passengers.push(traveler);
+        if(this.getAvailableSeatCount()>0){
+            this.passengers.push(traveler)
         } 
         // If the wagon is already at maximum capacity, don't add them.
     }
