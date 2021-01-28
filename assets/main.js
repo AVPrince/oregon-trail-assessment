@@ -8,11 +8,10 @@ class Traveler {
         this.food+=2;
     }
     eat(){
-        this.food -= 1;
-        if(this.food === 0) {
-            this.isHealthy = false;
-        } else {
+        if(this.food > 0) {
             this.food -= 1;
+        } else {
+            this.isHealthy = false;
         }
     }
 }
